@@ -1,0 +1,16 @@
+version: "3.6"
+services:
+  postgres:
+    image: postgres:11-alpine
+    environment:
+      POSTGRES_PASSWORD: "test1234"
+
+  cloudish-sql:
+    build: .
+    ports:
+      - "127.0.0.1:3307:3307"
+      - "127.0.0.1:8080:8080"
+    environment:
+      LOG_LEVEL: "DEBUG"
+    command:
+      - --db-address=postgres:5432
