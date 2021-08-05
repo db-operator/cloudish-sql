@@ -1,12 +1,11 @@
 name: Release
 
 on:
-  push:
-    tags:
-      - 'v*.*.*'
+  release:
+    types: [published]
 
 jobs:
-  build:
+  build_and_release:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
