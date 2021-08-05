@@ -1,0 +1,14 @@
+linters-settings:
+  gocognit:
+    min-complexity: 50
+  funlen:
+    lines: 150
+    statements: 50
+  cyclop:
+    max-complexity: 20
+
+issues:
+  exclude-rules:
+    - path: pubkey/pubkey.go
+      linters:
+        - goimports
