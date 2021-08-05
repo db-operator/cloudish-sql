@@ -215,7 +215,13 @@ func (dp *DatabaseProxy) AddInstance(project, instance string) error {
 		return err
 	}
 
-	database := strings.Split(instance, "~")[1]
+	database := instance
+
+	databaseNameComponents := strings.Split(instance, "~")
+	if len(databaseNameComponents) > 1 {
+		database = databaseNameComponents[1]
+	}
+
 	projectName := fmt.Sprintf("%s:%s", project, database)
 
 	serverCertPEM, err := dp.authority.Sign(pubKeyPEM, pkix.Name{
