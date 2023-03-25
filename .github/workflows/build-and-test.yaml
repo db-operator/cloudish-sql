@@ -25,6 +25,8 @@ jobs:
 
   build:
     runs-on: ubuntu-latest
+    permissions:
+      packages: write
     needs: lint
     steps:
       - name: Checkout
