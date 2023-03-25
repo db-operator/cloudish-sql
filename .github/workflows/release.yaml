@@ -7,6 +7,8 @@ on:
 jobs:
   build_and_release:
     runs-on: ubuntu-latest
+    permissions:
+      packages: write
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -20,6 +22,8 @@ jobs:
           registry: ghcr.io
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Set action link variable
+        run: echo "LINK=$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID" >> $GITHUB_ENV
       - name: Build and push
         id: docker_build
         uses: docker/build-push-action@v3
@@ -29,3 +33,9 @@ jobs:
             ghcr.io/kloeckner-i/cloudish-sql:${{ github.event.release.tag_name }}
             ghcr.io/${{ github.repository }}:${{ github.sha }}
             ghcr.io/${{ github.repository }}:latest
+          labels: |
+            action_id=${{ github.action }}
+            action_link=${{ env.LINK }}
+            actor=${{ github.actor }}
+            sha=${{ github.sha }}
+            ref=${{ github.ref }}
