@@ -32,8 +32,8 @@ import (
 	"sync"
 	"time"
 
-	"git.kci.rocks/DevOps/cloudish-sql/pubkey"
-	"git.kci.rocks/DevOps/cloudish-sql/util"
+	"github.com/db-operator/cloudish-sql/pubkey"
+	"github.com/db-operator/cloudish-sql/util"
 	log "github.com/sirupsen/logrus"
 )
 

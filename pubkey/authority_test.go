@@ -24,7 +24,7 @@ import (
 	"testing"
 	"time"
 
-	"git.kci.rocks/DevOps/cloudish-sql/pubkey"
+	"github.com/db-operator/cloudish-sql/pubkey"
 	"github.com/stretchr/testify/assert"
 )
 

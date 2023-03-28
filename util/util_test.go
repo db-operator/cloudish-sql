@@ -19,7 +19,7 @@ package util_test
 import (
 	"testing"
 
-	"git.kci.rocks/DevOps/cloudish-sql/util"
+	"github.com/db-operator/cloudish-sql/util"
 	"github.com/stretchr/testify/assert"
 )
 
