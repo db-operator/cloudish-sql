@@ -1,4 +1,4 @@
-module git.kci.rocks/DevOps/cloudish-sql
+module github.com/db-operator/cloudish-sql
 
 go 1.16
 

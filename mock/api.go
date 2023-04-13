@@ -24,8 +24,8 @@ import (
 	"strings"
 	"time"
 
-	"git.kci.rocks/DevOps/cloudish-sql/pubkey"
-	"git.kci.rocks/DevOps/cloudish-sql/util"
+	"github.com/db-operator/cloudish-sql/pubkey"
+	"github.com/db-operator/cloudish-sql/util"
 	"github.com/gorilla/mux"
 	"github.com/sdomino/scribble"
 	log "github.com/sirupsen/logrus"

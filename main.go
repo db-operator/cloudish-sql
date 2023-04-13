@@ -5,8 +5,8 @@ import (
 	"os"
 	"time"
 
-	"git.kci.rocks/DevOps/cloudish-sql/mock"
-	"git.kci.rocks/DevOps/cloudish-sql/pubkey"
+	"github.com/db-operator/cloudish-sql/mock"
+	"github.com/db-operator/cloudish-sql/pubkey"
 	log "github.com/sirupsen/logrus"
 	"github.com/spf13/cobra"
 	"golang.org/x/term"
